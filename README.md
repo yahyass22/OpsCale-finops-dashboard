@@ -14,7 +14,9 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-ff4b4b?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-### [Live Demo →](https://frontend-iota-ten-60.vercel.app)
+<br/>
+
+[![Live Demo](https://img.shields.io/badge/%E2%9A%A1_Live_Demo-Visit_Site-0070f3?style=for-the-badge&logo=vercel&logoColor=white)](https://frontend-iota-ten-60.vercel.app)
 
 [Features](#-key-features) • [Screenshots](#-screenshots) • [Quick Start](#-quick-start) • [Architecture](#-architecture) • [Documentation](#-documentation)
 
