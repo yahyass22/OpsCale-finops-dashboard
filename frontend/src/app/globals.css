@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #faf9f6;
+  --color-foreground: #1a1a18;
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a18;
+  --color-primary: #1d5fd1;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f0f2f5;
+  --color-secondary-foreground: #1e293b;
+  --color-muted: #f1f3f5;
+  --color-muted-foreground: #5e6a71;
+  --color-accent: #EAC119;
+  --color-accent-foreground: #1a1a18;
+  --color-destructive: #c44949;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #d9e1e6;
+  --color-input: #d9e1e6;
+  --color-ring: #1d5fd1;
+  --color-chart-cloud: #1d5fd1;
+  --color-chart-local: #159a74;
+  --color-chart-amber: #c88116;
+  --color-chart-red: #c44949;
+  --color-chart-lavender: #808BC5;
+  --color-chart-mustard: #EAC119;
+  --color-chart-teal: #245E55;
+  --color-chart-sky: #9ED6DF;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.75rem;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@utility glass-card {
+  background: color-mix(in srgb, white 80%, transparent);
+  backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+@utility metric-card {
+  background: color-mix(in srgb, white 80%, transparent);
+  backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+@utility metric-card {
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+}
+
+@utility chart-container {
+  background: color-mix(in srgb, white 80%, transparent);
+  backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+@utility sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  color: var(--color-muted-foreground);
+}
+
+@utility sidebar-link {
+  &:hover {
+    color: var(--color-foreground);
+    background: color-mix(in srgb, var(--color-secondary) 60%, transparent);
+  }
+}
+
+@utility sidebar-link-active {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  box-shadow: 0 1px 3px rgba(29, 95, 209, 0.2);
+}
+
+@utility input-field {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-input);
+  background: white;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  transition: all 0.15s ease;
+}
+
+@utility input-field {
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px var(--color-ring);
+  }
+  &::placeholder {
+    color: var(--color-muted-foreground);
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+@utility section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: color-mix(in srgb, var(--color-muted-foreground) 70%, transparent);
+  margin-bottom: 0.5rem;
+}
+
+/* Override MapLibre GL default popup styles — must be outside @layer to win specificity */
+.maplibregl-popup-content {
+  background: #ffffff !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12) !important;
+  padding: 0 !important;
+  border-radius: 0.5rem !important;
+  border: 1px solid #e5e7eb !important;
+}
+.maplibregl-popup-tip {
+  display: none !important;
+}
+.maplibregl-popup-close-button {
+  display: none !important;
+}
+.maplibregl-popup {
+  z-index: 50 !important;
+}
